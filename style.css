@@ -322,3 +322,38 @@ body{
         word-break: break-word;
     }
 }
+
+/* Small, discreet audio toggle (shown after playback begins) */
+.audio-toggle {
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: transform 120ms ease, opacity 160ms ease;
+    z-index: 1000;
+    backdrop-filter: blur(4px);
+    opacity: 0.9;
+}
+.audio-toggle[hidden] { display: none !important; }
+
+.audio-toggle .audio-icon {
+    display: inline-block;
+    transform: translateY(-2px);
+}
+.audio-toggle:hover { transform: scale(1.06); opacity: 1; }
+.audio-toggle:focus { outline: 2px solid rgba(199,113,0,0.25); }
+
+@media (max-width: 600px) {
+    .audio-toggle { right: 0.6rem; bottom: 0.6rem; width: 40px; height: 40px; }
+}
